@@ -1,13 +1,27 @@
 
-import { createAppContainer, createMaterialTopTabNavigator, createSwitchNavigator } from "react-navigation";
+import { createAppContainer, createMaterialTopTabNavigator, createStackNavigator } from "react-navigation";
 import  HomeScreen  from '../screens/Homescreen';
 import Categories from '../screens/Categories';
 import Playlist from '../screens/Playlist';
+import PlayScreen from '../screens/PlayScreen/PlayScreen'
 
-const AppNavigator = createMaterialTopTabNavigator({
+/*const StackNavigator = createStackNavigator({
+  PlayScreen: PlayScreen,
+});*/
+
+const TabNavigator = createMaterialTopTabNavigator({
   Home: HomeScreen,
   Categories: Categories,
   Playlist:Playlist,
+  PlayScreen: {
+    screen: PlayScreen,
+    navigationOptions:{
+      tabBarVisible: false,
+      header:null,
+    },
+    headerMode:'none',
+    header:null, 
+  }
 },
 {
   initialRouteName:'Playlist',
@@ -23,4 +37,8 @@ const AppNavigator = createMaterialTopTabNavigator({
   }
 }
 );
-export default createAppContainer(AppNavigator);
+
+
+
+
+export default createAppContainer(TabNavigator);

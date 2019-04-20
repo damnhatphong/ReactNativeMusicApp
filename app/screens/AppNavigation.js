@@ -3,10 +3,10 @@ import {StyleSheet,View,Text,ImageBackground} from 'react-native';
 
 import {SearchBar} from 'react-native-elements';
 import {createAppContainer,createStackNavigator} from 'react-navigation';
-import AppNavigator from '../components/Navigator';
+import TabNavigator from '../components/Navigator';
 import PlayScreen from './PlayScreen/PlayScreen';
 
-const Navigator = createAppContainer(AppNavigator);
+const Navigator = createAppContainer(TabNavigator);
 
 
 class MenuScreen extends Component{
@@ -27,12 +27,6 @@ class MenuScreen extends Component{
                         </View>          
                     </ImageBackground>    
                 </View>
-                <SearchBar
-                    placeholder= "What is this"
-                    onChangeText={this.updateSearch}
-                    value={search}
-                    lightTheme = {true}
-                />
                 <Navigator/>
             </View>
         );
@@ -56,7 +50,7 @@ export default createAppContainer(createStackNavigator({
     }
 },
 {
-    initialRouteName:'PlayScreen',
+    initialRouteName:'MenuScreen',
 })
 );
 

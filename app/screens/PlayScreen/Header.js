@@ -6,7 +6,7 @@ export default class Header extends Component{
     render(){
         return(
             <View style={styles.topMenu}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{this.props.navigation.navigate('Playlist')}}>
                     <Icon color='white' size={30} name='chevron-left'/>
                 </TouchableOpacity>
                 <Text style={styles.topMenuIcon}>Music Icon</Text>    
