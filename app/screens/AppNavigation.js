@@ -38,14 +38,12 @@ class MenuScreen extends Component{
 export default createAppContainer(createStackNavigator({
     MenuScreen: {
         screen: MenuScreen,
-        navigationOptions:{
-            header:null,
-        }
     },
     PlayScreen: {
         screen: PlayScreen,
         navigationOptions:{
-            header:null,
+           header:null,
+
         }
     }
 },

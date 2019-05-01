@@ -5,40 +5,43 @@ import Categories from '../screens/Categories';
 import Playlist from '../screens/Playlist';
 import PlayScreen from '../screens/PlayScreen/PlayScreen'
 
-/*const StackNavigator = createStackNavigator({
-  PlayScreen: PlayScreen,
-});*/
-
 const TabNavigator = createMaterialTopTabNavigator({
   Home: HomeScreen,
   Categories: Categories,
-  Playlist:Playlist,
-  PlayScreen: {
-    screen: PlayScreen,
-    navigationOptions:{
-      tabBarVisible: false,
-      header:null,
-    },
-    headerMode:'none',
-    header:null, 
-  }
+  Playlist:Playlist, 
 },
 {
-  initialRouteName:'Playlist',
+  initialRouteName:'Home',
   swipeEnabled: true,
   tabBarOptions: {
+    inactiveTintColor:'black',
+    activeTintColor:'red',
     labelStyle: {
       fontSize: 11,
-      color:'black',
+      fontFamily: 'Roboto',
     },
     style: {
       backgroundColor: 'white',
     },
-  }
+    indicatorStyle:{
+      backgroundColor:'red',
+    }
+  },
 }
 );
 
+const StackNavigator = createStackNavigator({
+  Tabs: {screen: TabNavigator},
+  PlayScreen: {
+    screen: PlayScreen,
+    navigationOptions:{
+    },    
+  }
+},{
+  initialRouteName:'Tabs',
+  headerMode: 'none',
+});
 
 
 
-export default createAppContainer(TabNavigator);
+export default createAppContainer(StackNavigator);

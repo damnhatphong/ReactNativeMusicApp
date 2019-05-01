@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import { StyleSheet, FlatList, View, Picker, Button} from "react-native";
+import { StyleSheet, FlatList, View, Picker, ImageBackground, Text} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import {ListItem,SearchBar} from 'react-native-elements';
 
@@ -116,6 +116,14 @@ export default class Playlist extends Component{
  
     render(){
         return (
+            <View>
+            <View style={styles.header} >
+            <ImageBackground  style={styles.headermenu} source={require('../assets/img/headerbackground.jpg')}>
+                <View style={styles.overlay}>
+                    <Text style={styles.title}>Music App</Text>    
+                </View>          
+            </ImageBackground>    
+            </View>
            <FlatList
             data={this.state.data}
             renderItem={({item}) => 
@@ -140,13 +148,39 @@ export default class Playlist extends Component{
             }
             ItemSeparatorComponent = {this.renderSeperator}
             keyExtractor ={(item)=>item.title}
-            ListHeaderComponent={this.renderHeader}
+            //ListHeaderComponent={this.renderHeader}
             />
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor: '#F2F2F2',
+    },
+    header:{
+        flexDirection:'row',     
+        justifyContent:'space-around', 
+    },
+    overlay:{
+        backgroundColor: 'rgba(255,255,255,.6)',
+        flexDirection:'row',     
+        justifyContent:'space-around', 
+        height:80,
+    },
+    headermenu: {    
+        width: '100%', 
+        height: 80,        
+    },
+    title:{
+        fontSize:25,
+        padding:15,
+        paddingTop:16,
+        textAlign: 'center',       
+        color: 'red',
+    },
     listitem: {
         borderBottomWidth:0,
         marginTop:10,

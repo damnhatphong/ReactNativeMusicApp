@@ -1,11 +1,18 @@
 import React,{Component} from "react";
-import { StyleSheet,View,Image,ImageBackground} from "react-native";
+import { StyleSheet,View,Image,ImageBackground,Text} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default class Categories extends Component{
     render(){
         return(
             <View style={styles.container}>
+                <View style={styles.header} >
+                <ImageBackground  style={styles.headermenu} source={require('../assets/img/headerbackground.jpg')}>
+                    <View style={styles.headeroverlay}>
+                        <Text style={styles.title}>Music App</Text>    
+                    </View>          
+                </ImageBackground>    
+                </View>
                 <View style={styles.blockcontent}>
                     <TouchableOpacity>
                         <ImageBackground  source={require('../assets/img/ukmusic.png')} style={styles.categoryblock}>
@@ -46,6 +53,27 @@ export default class Categories extends Component{
 const styles = StyleSheet.create({
     container:{
         flex:1,
+    },
+    header:{
+        flexDirection:'row',     
+        justifyContent:'space-around', 
+    },
+    headeroverlay:{
+        backgroundColor: 'rgba(255,255,255,.6)',
+        flexDirection:'row',     
+        justifyContent:'space-around', 
+        height:80,
+    },
+    headermenu: {    
+        width: '100%', 
+        height: 80,        
+    },
+    title:{
+        fontSize:25,
+        padding:15,
+        paddingTop:16,
+        textAlign: 'center',       
+        color: 'red',
     },
     blockcontent:{
         marginTop:25,

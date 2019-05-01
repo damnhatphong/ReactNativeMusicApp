@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import { StyleSheet,View, Text , Image, ScrollView} from "react-native";
+import { StyleSheet,View, Text , Image, ScrollView,ImageBackground} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 
@@ -7,6 +7,13 @@ export default class HomeScreen extends Component {
     render(){
         return (
             <ScrollView>
+                 <View style={styles.header} >
+                <ImageBackground  style={styles.headermenu} source={require('../assets/img/headerbackground.jpg')}>
+                    <View style={styles.overlay}>
+                        <Text style={styles.title}>Music App</Text>    
+                    </View>          
+                </ImageBackground>    
+                </View>
                <View style={styles.blockcontent}>
                     <Text style={styles.blocktitle}>What should I hear today?</Text>
                    <View style={styles.imagecontainer}>
@@ -81,6 +88,31 @@ export default class HomeScreen extends Component {
 
 
 const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor: '#F2F2F2',
+    },
+    header:{
+        flexDirection:'row',     
+        justifyContent:'space-around', 
+    },
+    overlay:{
+        backgroundColor: 'rgba(255,255,255,.6)',
+        flexDirection:'row',     
+        justifyContent:'space-around', 
+        height:80,
+    },
+    headermenu: {    
+        width: '100%', 
+        height: 80,        
+    },
+    title:{
+        fontSize:25,
+        padding:15,
+        paddingTop:16,
+        textAlign: 'center',       
+        color: 'red',
+    },
     blockcontent:{
         flex:1,
         padding:10,

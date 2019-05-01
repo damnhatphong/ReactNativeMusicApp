@@ -144,7 +144,7 @@ export default class PlayScreen extends Component{
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'rgb(4,4,4)',
+      backgroundColor: 'rgba(147, 147, 147, 0.77)',
     },
     audioElement: {
       height: 0,
