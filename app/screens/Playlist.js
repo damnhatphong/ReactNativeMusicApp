@@ -1,69 +1,76 @@
 import React,{Component} from "react";
 import { StyleSheet, FlatList, View, Picker, ImageBackground, Text} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import {ListItem,SearchBar} from 'react-native-elements';
-
-
-export const TRACKS = [
-    {
-      title: 'Stressed Out',
-      artist: 'Twenty One Pilots',
-      albumArtUrl: "http://36.media.tumblr.com/14e9a12cd4dca7a3c3c4fe178b607d27/tumblr_nlott6SmIh1ta3rfmo1_1280.jpg",
-      audioUrl:  require('../assets/sound/FurElise.mp3'),//"http://russprince.com/hobbies/files/13%20Beethoven%20-%20Fur%20Elise.mp3",
-    },
-    {
-      title: 'Hotline Bling',
-      artist: 'Drake',
-      albumArtUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Drake_-_Hotline_Bling.png',
-      audioUrl: "http://russprince.com/hobbies/files/13%20Beethoven%20-%20Fur%20Elise.mp3",
-    },
-  ]
+import {ListItem} from 'react-native-elements';
 
 const list = [
     {
-         title: "First playlist",
-         icon: require('../assets/img/musicnotfound.jpg'),
-         subtitle: "subtitle",
+         title: "Slow dancing in a burning room",
+         icon: "http://4.bp.blogspot.com/-HklEyrnpI54/T7Zdxuvp2pI/AAAAAAAABfY/oZBEE-mRXXM/s1600/untitled.jpg",
+         subtitle: "Album: Continuum",
          track: {
-            title: 'Hotline Bling',
-            artist: 'Drake',
-            albumArtUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Drake_-_Hotline_Bling.png',
-            audioUrl: 'http://russprince.com/hobbies/files/13%20Beethoven%20-%20Fur%20Elise.mp3',
+            title: 'Slow dancing in a burning room',
+            artist: 'John Mayer',
+            albumArtUrl: 'http://4.bp.blogspot.com/-HklEyrnpI54/T7Zdxuvp2pI/AAAAAAAABfY/oZBEE-mRXXM/s1600/untitled.jpg',
+            audioUrl: 'http://www.1songday.com/wp-content/uploads/2012/11/08-Slow-Dancing-In-A-Burning-Room.mp3',
         },
-    },
-     {
-         title: "Second playlist",
-         icon: require('../assets/img/musicnotfound.jpg'),
-         subtitle: "subtitle",
-         track: {
-            title: 'Hotline Bling',
-            artist: 'Drake',
-            albumArtUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Drake_-_Hotline_Bling.png',
-            audioUrl: 'http://russprince.com/hobbies/files/13%20Beethoven%20-%20Fur%20Elise.mp3',
-        },
-     },
-     /*{
-         title: "Third playlist",
-         icon: require('../assets/img/musicnotfound.jpg'),
-         subtitle: "subtitle",
-     },
-     {
-         title: "Fourth playlist",
-         icon: require('../assets/img/musicnotfound.jpg'),
-         subtitle: "subtitle",
-     },
-     {
-        title: "Fifth playlist",
-        icon: require('../assets/img/musicnotfound.jpg'),
-        subtitle: "subtitle",
     },
     {
-        title: "Sixth playlist",
-        icon: require('../assets/img/musicnotfound.jpg'),
-        subtitle: "subtitle",
-    },*/
+        title: "Gravity",
+        icon: "https://img.discogs.com/7xKDizWVb5bPkwOuiZE8_pv9aJA=/fit-in/600x596/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1701329-1459316343-6392.jpeg.jpg",
+        subtitle: "Album: Continuum",
+        track: {
+        title: 'Gravity',
+        artist: 'John Mayer',
+        albumArtUrl: 'https://img.discogs.com/7xKDizWVb5bPkwOuiZE8_pv9aJA=/fit-in/600x596/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1701329-1459316343-6392.jpeg.jpg',
+        audioUrl: 'http://www.beihai2000.com/files/201010.mp3',
+        },
+    },
+    {
+         title: "Stereo Hearts",
+         icon: "https://cps-static.rovicorp.com/3/JPG_500/MI0003/623/MI0003623595.jpg?partner=allrovi.com",
+         subtitle: "Stereo Hearts",
+         track: {
+            title: 'Stereo Hearts',
+            artist: 'Gymclassheroes Ft. Adam Levine',
+            albumArtUrl: "https://cps-static.rovicorp.com/3/JPG_500/MI0003/623/MI0003623595.jpg?partner=allrovi.com",
+            audioUrl: 'https://a.tumblr.com/tumblr_lmo32mjsxK1qzfb7xo1.mp3',
+            },
+     },
+     {
+         title: "Hotel California",
+         icon: "https://bestclassicbands.com/wp-content/uploads/2015/11/Abbey-Hotel-Cali-crop.jpg",
+         subtitle: "Album: The Complete Greatest Hits",
+         track: {
+            title: 'Hotel California',
+            artist: 'The Eagles',
+            albumArtUrl: 'https://bestclassicbands.com/wp-content/uploads/2015/11/Abbey-Hotel-Cali-crop.jpg',
+            audioUrl: 'http://sacps.edu.hk/elearning/r%20eagles%20-%20hotel%20california.mp3',
+            },
+     },
+     {
+        title: "Layla",
+        icon: "https://www.rockhall.com/sites/default/files/styles/header_image_portrait/public/ericclapton_001-2.jpg?itok=-nceAiaG",
+        subtitle: "Time Pieces / Time Pieces Vol.2",
+        track: {
+            title: 'Layla',
+            artist: 'Eric Clapton',
+            albumArtUrl: 'https://www.rockhall.com/sites/default/files/styles/header_image_portrait/public/ericclapton_001-2.jpg?itok=-nceAiaG',
+            audioUrl: "http://hcmaslov.d-real.sci-nnov.ru/public/mp3/Eric%20Clapton/Eric%20Clapton%20'Layla'.mp3",
+            },
+     },
+    {
+        title: "In The End",
+        icon: "https://images.genius.com/88dc59de829fe793676348bf42b38a73.1000x1000x1.jpg",
+        subtitle: "Album:Hybrid Theory",
+        track: {
+            title: 'In The End',
+            artist: 'Linkin Park',
+            albumArtUrl: 'https://images.genius.com/88dc59de829fe793676348bf42b38a73.1000x1000x1.jpg',
+            audioUrl: 'http://www2.hkedcity.net/sch_files/a/cyc/cyc-03043d/public_html/music/Linkin_Park_-_in_the_end.mp3',
+        },
+    },
 ];
-
 const listpicker=['UK','US','V-POP','K-POP'];
 
 export default class Playlist extends Component{
@@ -118,7 +125,7 @@ export default class Playlist extends Component{
         return (
             <View>
             <View style={styles.header} >
-            <ImageBackground  style={styles.headermenu} source={require('../assets/img/headerbackground.jpg')}>
+            <ImageBackground  style={styles.headermenu} source={require('../assets/img/headerbackground.jpg')} >
                 <View style={styles.overlay}>
                     <Text style={styles.title}>Music App</Text>    
                 </View>          
@@ -138,7 +145,7 @@ export default class Playlist extends Component{
                         <ListItem 
                         title={item.title} 
                         subtitle={item.subtitle}
-                        leftAvatar={{source: item.icon}}
+                        leftAvatar={{source:{uri: item.icon}}}
                         rightIcon={{name:'chevron-right'}}
                         key
                         style={styles.listitem}
